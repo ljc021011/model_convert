@@ -34,7 +34,7 @@ jobs:
         cd yolo
         mkdir -pv onnx
         cd onnx
-        wget https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt -O yolo.pt
+        cp ../yolo/datasets/best.pt yolo.pt
         python ../export_det_v26.pyc -w yolo.pt --sim
         yolo export model=yolo26n.pt format=onnx opset=19
         mv yolo26n.onnx yolo26n_original.onnx 
