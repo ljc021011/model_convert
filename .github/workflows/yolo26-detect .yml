@@ -34,7 +34,7 @@ jobs:
         cd yolo
         mkdir -pv onnx
         cd onnx
-        cp ../yolo/datasets/best.pt yolo.pt
+        cp ../datasets/best.pt yolo.pt
         python ../export_det_v26.pyc -w yolo.pt --sim
         yolo export model=yolo26n.pt format=onnx opset=19
         mv yolo26n.onnx yolo26n_original.onnx 
